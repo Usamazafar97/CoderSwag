@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
 import com.example.coderswag.R
 import com.example.coderswag.model.Category
 import kotlinx.android.synthetic.main.category_list_item.view.*
@@ -38,13 +39,30 @@ class CategoryAdapter(context: Context, categoryList: List<Category>) : BaseAdap
 
         // declaring our custom view
         val categoryView: View
+        val viewHolder: ViewHolder
 
-        // inflate the whole view with our own resource file
-        categoryView = LayoutInflater.from(context).inflate(R.layout.category_list_item,null)
 
-        // getting the image and text view in the resource file
-        val categoryImage: ImageView = categoryView.findViewById(R.id.categoryImage)
-        val categoryName: TextView = categoryView.findViewById(R.id.categoryName)
+        // if for the first time
+        if (convertView == null){
+
+            // inflate the whole view with our own resource file
+            categoryView = LayoutInflater.from(context).inflate(R.layout.category_list_item,null)
+
+            viewHolder = ViewHolder()
+
+            // getting the image and text view in the resource file
+            viewHolder.categoryImage = categoryView.findViewById(R.id.categoryImage)
+            viewHolder.categoryName = categoryView.findViewById(R.id.categoryName)
+
+            // holding the data
+            convertView?.tag = viewHolder
+        }
+        else{
+
+            viewHolder = convertView?.tag as ViewHolder
+            categoryView = convertView
+        }
+
 
         // getting the current category item
         val category = categoryList[position]
@@ -55,12 +73,18 @@ class CategoryAdapter(context: Context, categoryList: List<Category>) : BaseAdap
         println(resourceId)
 
         // setting the image resource id
-        categoryImage.setImageResource(resourceId)
+        viewHolder.categoryImage?.setImageResource(resourceId)
 
         // setting the text
-        categoryName.text = category.title
+        viewHolder.categoryName?.text = category.title
 
         // returning the view created
         return categoryView
+    }
+
+    class ViewHolder(){
+
+        var categoryImage: ImageView? = null
+        var categoryName: TextView? = null
     }
 }
