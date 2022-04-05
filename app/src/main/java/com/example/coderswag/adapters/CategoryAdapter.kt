@@ -12,10 +12,7 @@ import com.example.coderswag.R
 import com.example.coderswag.model.Category
 import kotlinx.android.synthetic.main.category_list_item.view.*
 
-class CategoryAdapter(context: Context, categoryList: List<Category>) : BaseAdapter() {
-
-    val context = context
-    val categoryList = categoryList
+class CategoryAdapter(private val context: Context, private val categoryList: List<Category>) : BaseAdapter() {
 
     override fun getCount(): Int {
 
