@@ -6,6 +6,8 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.33406113537117904" />
         <entry key="app/src/main/res/layout/activity_products.xml" value="0.41041666666666665" />
         <entry key="app/src/main/res/layout/category_list_item.xml" value="0.3045822102425876" />
+        <entry key="app/src/main/res/layout/product_list_item.xml" value="0.3291086832682292" />
+        <entry key="app/src/main/res/layout/roduct_list.xml" value="0.4244791666666667" />
       </map>
     </option>
   </component>
