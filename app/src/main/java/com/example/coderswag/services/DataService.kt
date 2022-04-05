@@ -13,10 +13,10 @@ object DataService {
     )
 
     val hats = listOf<Product>(
-        Product("Devslopes Graphic Beenie","$18","hat01"),
-        Product("Devslopes Hat Black","$20","hat02"),
-        Product("Devslopes Hat White","$18","hat03"),
-        Product("Devslopes Hat Snapback","$22","hat04")
+        Product("Devslopes Graphic Beenie","$18","hat1"),
+        Product("Devslopes Hat Black","$20","hat2"),
+        Product("Devslopes Hat White","$18","hat3"),
+        Product("Devslopes Hat Snapback","$22","hat4")
     )
 
     val hoodies = listOf<Product>(
